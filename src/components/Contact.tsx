@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
