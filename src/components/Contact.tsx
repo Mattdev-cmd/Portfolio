@@ -13,7 +13,11 @@ export default function Contact() {
 
   useEffect(() => {
     // Initialize EmailJS - Replace with your Public Key from emailjs.com
-    emailjs.init('BsTCrxX6iO5kxRcGE'); // Get this from https://www.emailjs.com/
+    try {
+      emailjs.init('BsTCrxX6iO5kxRcGE');
+    } catch (error) {
+      console.error('EmailJS initialization failed:', error);
+    }
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
