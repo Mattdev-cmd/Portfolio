@@ -13,7 +13,7 @@ export default function Contact() {
 
   useEffect(() => {
     // Initialize EmailJS - Replace with your Public Key from emailjs.com
-    emailjs.init('YOUR_PUBLIC_KEY'); // Get this from https://www.emailjs.com/
+    emailjs.init('BsTCrxX6iO5kxRcGE'); // Get this from https://www.emailjs.com/
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -31,8 +31,8 @@ export default function Contact() {
       // Replace these with your EmailJS credentials
       // Get them from https://www.emailjs.com/
       await emailjs.send(
-        'YOUR_SERVICE_ID',      // Your EmailJS Service ID
-        'YOUR_TEMPLATE_ID',     // Your EmailJS Template ID
+        'service_9upv28a',      // Your EmailJS Service ID
+        'template_x5c8wdz',     // Your EmailJS Template ID
         {
           from_name: formData.name,
           from_email: formData.email,
