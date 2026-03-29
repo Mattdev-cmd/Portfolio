@@ -1,6 +1,5 @@
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,15 +9,6 @@ export default function Contact() {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
-  useEffect(() => {
-    // Initialize EmailJS - Replace with your Public Key from emailjs.com
-    try {
-      emailjs.init('BsTCrxX6iO5kxRcGE');
-    } catch (error) {
-      console.error('EmailJS initialization failed:', error);
-    }
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -32,24 +22,28 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      // Replace these with your EmailJS credentials
-      // Get them from https://www.emailjs.com/
-      await emailjs.send(
-        'service_9upv28a',      // Your EmailJS Service ID
-        'template_x5c8wdz',     // Your EmailJS Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
+      // Using Formspree - just replace the form ID below
+      const response = await fetch('https://formspree.io/f/mdapewkz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
           message: formData.message,
-          to_email: 'matthewngelopadayao2@gmail.com', // Your email
-        }
-      );
+        }),
+      });
 
-      setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setSubmitted(false), 5000); // Clear success message after 5s
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('Error sending message:', error);
       alert('Error sending message. Please try again or email me directly.');
     } finally {
       setLoading(false);
