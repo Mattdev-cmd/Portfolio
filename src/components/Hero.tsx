@@ -30,70 +30,70 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-12 sm:py-20">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left side - Text */}
-          <div className="text-white space-y-8">
+          <div className="text-white space-y-6 sm:space-y-8">
             <div className="space-y-4">
-              <div className="inline-block bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 text-sm font-semibold">
+              <div className="inline-block bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 text-sm font-semibold animate-fade-in">
                 <Rocket size={16} className="inline mr-1" /> Fresh Graduate
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
                 Hi, I'm <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-200">Matthew Angelo L. Padayao</span>
               </h1>
-              <p className="text-2xl font-semibold text-blue-100">
+              <p className="text-xl sm:text-2xl font-semibold text-blue-100">
                 Junior Web Developer
               </p>
             </div>
 
-            <p className="text-lg text-blue-50 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-blue-50 leading-relaxed max-w-xl">
               Building Scalable & User-Friendly Web Applications. I develop responsive and functional web applications using modern technologies like React, JavaScript, and Node.js. I focus on clean code, performance, and real-world problem solving.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4 pt-4">
               <button 
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-xl font-bold flex items-center gap-2 transition transform hover:scale-105 shadow-lg"
+                className="bg-white text-blue-600 hover:bg-blue-50 px-6 sm:px-8 py-3 rounded-xl font-bold flex items-center gap-2 transition transform hover:scale-105 active:scale-95 shadow-lg active:shadow-md"
               >
                 View My Work <ArrowRight size={20} />
               </button>
               <a 
                 href="/RESUME.P.pdf" 
                 download="Matthew_Angelo_Resume.pdf"
-                className="bg-white/20 backdrop-blur-md border-2 border-white text-white hover:bg-white/30 px-8 py-3 rounded-xl font-bold transition transform hover:scale-105 flex items-center gap-2 cursor-pointer"
+                className="bg-white/20 backdrop-blur-md border-2 border-white text-white hover:bg-white/30 active:bg-white/40 px-6 sm:px-8 py-3 rounded-xl font-bold transition transform hover:scale-105 active:scale-95 flex items-center gap-2 cursor-pointer"
               >
                 Download Resume
               </a>
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4 pt-4">
-              <a href="https://github.com/Mattdev-cmd" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 transition transform hover:scale-110" title="GitHub">
+            <div className="flex gap-3 pt-6">
+              <a href="https://github.com/Mattdev-cmd" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 active:bg-white/50 transition transform hover:scale-110 active:scale-95" title="GitHub">
                 <GithubIcon />
               </a>
-              <a href="https://www.facebook.com/shinarthemiss/" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 transition transform hover:scale-110" title="Facebook">
+              <a href="https://www.facebook.com/shinarthemiss/" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 active:bg-white/50 transition transform hover:scale-110 active:scale-95" title="Facebook">
                 <FacebookIcon />
               </a>
-              <a href="https://www.instagram.com/_ellipsisssss/" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 transition transform hover:scale-110" title="Instagram">
+              <a href="https://www.instagram.com/_ellipsisssss/" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 active:bg-white/50 transition transform hover:scale-110 active:scale-95" title="Instagram">
                 <InstagramIcon />
               </a>
             </div>
           </div>
 
           {/* Right side - Profile Image */}
-          <div className="relative h-96 md:h-[500px]">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-3xl transform -rotate-6 opacity-75"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl transform rotate-3 opacity-50"></div>
-            <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border-2 border-white/30 flex items-center justify-center">
+          <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] w-full">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl md:rounded-3xl transform -rotate-6 opacity-75"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl md:rounded-3xl transform rotate-3 opacity-50"></div>
+            <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl overflow-hidden border-2 border-white/30 flex items-center justify-center">
               <img
                 src="https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/518290085_735353462534655_8031989623691443761_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=iWR6oEXy6-4Q7kNvwFiIXzz&_nc_oc=AdqsL2wK9gn_4ki0nI_n4z7Banx1KBJtCLuiIjnNoxkR3W9UdBIz1DAfFLkPaSlsLV8&_nc_zt=23&_nc_ht=scontent.fmnl25-5.fna&_nc_gid=KsTCtKihnS9aapu8LgwRSg&_nc_ss=7a32e&oh=00_Afy79IolBF3n84X-xxXaz2Db4hCcCgWiM-LtYOppwuHSsQ&oe=69CD3DCB"
                 alt="Matthew Angelo L. Padayao"
                 className="w-full h-full object-cover"
               />
               {/* Floating badge */}
-              <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-6 py-3 rounded-full font-bold text-blue-600 flex items-center gap-2 shadow-lg">
-                <Star size={20} className="fill-yellow-400 text-yellow-400" />
+              <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 bg-white/90 backdrop-blur-md px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-blue-600 text-sm sm:text-base flex items-center gap-2 shadow-lg">
+                <Star size={18} className="fill-yellow-400 text-yellow-400" />
                 Open to Opportunities
               </div>
             </div>

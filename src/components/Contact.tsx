@@ -51,43 +51,43 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900 px-4">
+    <section id="contact" className="py-12 sm:py-20 bg-white dark:bg-gray-900 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4 text-gray-900 dark:text-white">
           Get In Touch
         </h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-16 text-lg">
+        <p className="text-center text-gray-600 dark:text-gray-400 mb-12 sm:mb-16 text-base sm:text-lg">
           Have a project in mind? Let's talk about it!
         </p>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="flex items-start gap-4">
+          <div className="space-y-6 sm:space-y-8 order-2 md:order-1">
+            <div className="flex items-start gap-3 sm:gap-4">
               <Mail className="text-blue-600 dark:text-blue-400 flex-shrink-0 mt-1" size={24} />
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
-                <a href="mailto:matthewngelopadayao2@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">matthewngelopadayao2@gmail.com</a>
+              <div className="min-w-0">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-base sm:text-lg">Email</h3>
+                <a href="mailto:matthewngelopadayao2@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline break-all text-sm sm:text-base">matthewngelopadayao2@gmail.com</a>
               </div>
             </div>
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-3 sm:gap-4">
               <Phone className="text-blue-600 dark:text-blue-400 flex-shrink-0 mt-1" size={24} />
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
-                <a href="tel:+639943025722" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">+63 994 302 5722</a>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-base sm:text-lg">Phone</h3>
+                <a href="tel:+639943025722" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm sm:text-base">+63 994 302 5722</a>
               </div>
             </div>
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-3 sm:gap-4">
               <MapPin className="text-blue-600 dark:text-blue-400 flex-shrink-0 mt-1" size={24} />
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Location</h3>
-                <p className="text-gray-600 dark:text-gray-400">Paranaque, Metro Manila, Philippines</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-base sm:text-lg">Location</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Paranaque, Metro Manila, Philippines</p>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6 order-1 md:order-2">
             <div>
               <label htmlFor="name" className="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">
                 Full Name
@@ -99,7 +99,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-900 dark:text-white"
+                className="w-full px-4 py-3 sm:py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-900 dark:text-white text-base"
                 placeholder="Your name"
               />
             </div>
@@ -114,7 +114,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-900 dark:text-white"
+                className="w-full px-4 py-3 sm:py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-900 dark:text-white text-base"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -129,14 +129,14 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-900 dark:text-white resize-none"
+                className="w-full px-4 py-3 sm:py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-900 dark:text-white resize-none text-base"
                 placeholder="Your message..."
               />
             </div>
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-500 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition"
+              className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-500 text-white px-6 py-3 sm:py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition active:scale-95 min-h-[44px] text-base"
             >
               {loading ? 'Sending...' : 'Send Message'} <Send size={18} />
             </button>
