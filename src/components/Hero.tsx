@@ -22,11 +22,12 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-red-800 dark:from-blue-900 dark:via-purple-900 dark:to-red-950"></div>
+      <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, #4e72bf 0%, #7b2d3f 50%, #b3002b 100%)'}}></div>
+      <div className="absolute inset-0" style={{background: 'linear-gradient(45deg, rgba(78, 114, 191, 0.1) 0%, rgba(179, 0, 43, 0.1) 100%)'}}></div>
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-red-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-2000"></div>
-        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-4000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{backgroundColor: '#4e72bf'}}></div>
+        <div className="absolute top-40 right-10 w-80 h-80 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-2000" style={{backgroundColor: '#b3002b'}}></div>
+        <div className="absolute -bottom-8 left-1/2 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-4000" style={{backgroundColor: '#6b3d5e'}}></div>
       </div>
 
       {/* Content */}
