@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -7,6 +8,13 @@ export default function Contact() {
     email: '',
     message: '',
   });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    // Initialize EmailJS - Replace with your Public Key from emailjs.com
+    emailjs.init('YOUR_PUBLIC_KEY'); // Get this from https://www.emailjs.com/
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -15,12 +23,33 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the data to a backend service
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    setLoading(true);
+
+    try {
+      // Replace these with your EmailJS credentials
+      // Get them from https://www.emailjs.com/
+      await emailjs.send(
+        'YOUR_SERVICE_ID',      // Your EmailJS Service ID
+        'YOUR_TEMPLATE_ID',     // Your EmailJS Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'matthewngelopadayao2@gmail.com', // Your email
+        }
+      );
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setSubmitted(false), 5000); // Clear success message after 5s
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Error sending message. Please try again or email me directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -108,10 +137,16 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition"
+              disabled={loading}
+              className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-500 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition"
             >
-              Send Message <Send size={18} />
+              {loading ? 'Sending...' : 'Send Message'} <Send size={18} />
             </button>
+            {submitted && (
+              <div className="mt-4 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-lg text-sm text-center">
+                ✓ Thank you! Your message has been sent successfully.
+              </div>
+            )}
           </form>
         </div>
       </div>

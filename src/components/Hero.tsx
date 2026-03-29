@@ -42,12 +42,12 @@ export default function Hero() {
                 Hi, I'm <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-200">Matthew Angelo L. Padayao</span>
               </h1>
               <p className="text-2xl font-semibold text-blue-100">
-                Aspiring Web Developer
+                Junior Web Developer
               </p>
             </div>
 
             <p className="text-lg text-blue-50 leading-relaxed max-w-xl">
-              Building interactive and responsive web applications with modern technologies. Passionate about clean code, user experience, and continuous learning. Let's create something amazing together!
+              Building Scalable & User-Friendly Web Applications. I develop responsive and functional web applications using modern technologies like React, JavaScript, and Node.js. I focus on clean code, performance, and real-world problem solving.
             </p>
 
             {/* CTA Buttons */}

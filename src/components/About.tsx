@@ -38,8 +38,8 @@ export default function About() {
                 Driven by curiosity and innovation
               </h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                I'm a recent Information Technology graduate with a passion for creating interactive and functional web applications. 
-                With hands-on experience in React, TypeScript, and modern web technologies, I love turning ideas into reality.
+                I am a recent IT graduate specializing in web development. I build responsive, user-friendly applications and enjoy solving 
+                real-world problems through technology. I have hands-on experience with modern web tools and continuously improve my skills through projects.
               </p>
             </div>
 
