@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Home, FolderKanban, Wrench, Mail } from 'lucide-react';
+import { Menu, X, Home, FolderKanban, Wrench, Mail, GraduationCap, Trophy } from 'lucide-react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,6 +13,8 @@ export default function Header() {
 
   const navLinks = [
     { href: '#home', label: 'Home', icon: Home },
+    { href: '#education', label: 'Education', icon: GraduationCap },
+    { href: '#achievements', label: 'Achievements', icon: Trophy },
     { href: '#projects', label: 'Projects', icon: FolderKanban },
     { href: '#skills', label: 'Skills', icon: Wrench },
     { href: '#contact', label: 'Contact', icon: Mail },

@@ -1,4 +1,5 @@
-import { ArrowRight, Star, Rocket } from 'lucide-react';
+import { ArrowRight, Star, Rocket, Mail } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const GithubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -19,93 +20,148 @@ const InstagramIcon = () => (
 );
 
 export default function Hero() {
+  const [displayedName, setDisplayedName] = useState('');
+  const [parallaxOffset, setParallaxOffset] = useState(0);
+  
+  const fullName = 'Matthew Angelo L. Padayao';
+
+  // Typing animation
+  useEffect(() => {
+    if (displayedName.length < fullName.length) {
+      const timer = setTimeout(() => {
+        setDisplayedName(fullName.slice(0, displayedName.length + 1));
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [displayedName]);
+
+  // Parallax effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setParallaxOffset(window.scrollY * 0.5);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const stats = [
+    { label: 'Projects', value: '10+' },
+    { label: 'Skills', value: '8+' },
+    { label: 'Experience', value: 'Fresh' }
+  ];
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, #4e72bf 0%, #7b2d3f 50%, #b3002b 100%)'}}></div>
+      {/* Animated gradient background with parallax */}
+      <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, #4e72bf 0%, #7b2d3f 50%, #b3002b 100%)', transform: `translateY(${parallaxOffset}px)`}}></div>
       <div className="absolute inset-0" style={{background: 'linear-gradient(45deg, rgba(78, 114, 191, 0.1) 0%, rgba(179, 0, 43, 0.1) 100%)'}}></div>
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{backgroundColor: '#4e72bf'}}></div>
         <div className="absolute top-40 right-10 w-80 h-80 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-2000" style={{backgroundColor: '#b3002b'}}></div>
         <div className="absolute -bottom-8 left-1/2 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-4000" style={{backgroundColor: '#6b3d5e'}}></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-12 sm:py-20">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-12 sm:py-20">
+        <div className="grid md:grid-cols-2 gap-16 md:gap-20 lg:gap-24 xl:gap-32 items-center">
           {/* Left side - Text */}
-          <div className="text-white space-y-6 sm:space-y-8">
-            <div className="space-y-4">
-              <div className="inline-block bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 text-sm font-semibold animate-fade-in">
-                <Rocket size={16} className="inline mr-1" /> Fresh Graduate
-              </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-                Hi, I'm <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-200">Matthew Angelo L. Padayao</span>
+          <div className="text-white space-y-6 sm:space-y-8 animate-slide-in-left">
+            {/* Badge - Staggered animation */}
+            <div className="inline-block bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 text-sm font-semibold animate-badge-glow" style={{animationDelay: '0s'}}>
+              <Rocket size={16} className="inline mr-2" /> Fresh Graduate
+            </div>
+
+            {/* Heading with typing animation */}
+            <div className="space-y-3 sm:space-y-4">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight animate-slide-in-left whitespace-nowrap" style={{animationDelay: '0.1s'}}>
+                Hi, I'm <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-200 inline-block min-h-[1em]">{displayedName}<span className="animate-cursor">|</span></span>
               </h1>
-              <p className="text-xl sm:text-2xl font-semibold text-blue-100">
+              <p className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-100 animate-slide-in-left" style={{animationDelay: '0.2s'}}>
                 Junior Web Developer
               </p>
             </div>
 
-            <p className="text-base sm:text-lg text-blue-50 leading-relaxed max-w-xl">
+            {/* Description - Staggered */}
+            <p className="text-sm sm:text-base lg:text-lg text-blue-50 leading-relaxed max-w-xl animate-slide-in-left" style={{animationDelay: '0.3s'}}>
               Building Scalable & User-Friendly Web Applications. I develop responsive and functional web applications using modern technologies like React, JavaScript, and Node.js. I focus on clean code, performance, and real-world problem solving.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-3 sm:gap-4 pt-4">
+            {/* Statistics */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 py-4 sm:py-6 animate-slide-in-left" style={{animationDelay: '0.4s'}}>
+              {stats.map((stat, idx) => (
+                <div key={idx} className="bg-white/10 backdrop-blur-md rounded-lg p-3 sm:p-4 border border-white/20 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                  <div className="text-xl sm:text-2xl font-bold text-yellow-300">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-blue-100">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Buttons - Staggered */}
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4 animate-slide-in-left" style={{animationDelay: '0.5s'}}>
               <button 
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-white text-blue-600 hover:bg-blue-50 px-6 sm:px-8 py-3 rounded-xl font-bold flex items-center gap-2 transition transform hover:scale-105 active:scale-95 shadow-lg active:shadow-md"
+                className="bg-white text-blue-600 hover:bg-blue-50 px-6 sm:px-8 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl active:shadow-md"
               >
                 View My Work <ArrowRight size={20} />
+              </button>
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gradient-to-r from-pink-500 to-rose-500 text-white hover:from-pink-600 hover:to-rose-600 px-6 sm:px-8 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl active:shadow-md"
+              >
+                Get in Touch <Mail size={20} />
               </button>
               <a 
                 href="/RESUME.P.pdf" 
                 download="Matthew_Angelo_Resume.pdf"
-                className="bg-white/20 backdrop-blur-md border-2 border-white text-white hover:bg-white/30 active:bg-white/40 px-6 sm:px-8 py-3 rounded-xl font-bold transition transform hover:scale-105 active:scale-95 flex items-center gap-2 cursor-pointer"
+                className="bg-white/20 backdrop-blur-md border-2 border-white text-white hover:bg-white/30 active:bg-white/40 px-6 sm:px-8 py-3 rounded-xl font-bold transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
               >
                 Download Resume
               </a>
             </div>
 
-            {/* Social Links */}
-            <div className="flex gap-3 pt-6">
-              <a href="https://github.com/Mattdev-cmd" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 active:bg-white/50 transition transform hover:scale-110 active:scale-95" title="GitHub">
+            {/* Social Links - Staggered */}
+            <div className="flex gap-3 pt-4 sm:pt-6 animate-slide-in-left" style={{animationDelay: '0.6s'}}>
+              <a href="https://github.com/Mattdev-cmd" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 active:bg-white/50 transition-all transform hover:scale-110 active:scale-95 hover:shadow-lg" title="GitHub">
                 <GithubIcon />
               </a>
-              <a href="https://www.facebook.com/shinarthemiss/" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 active:bg-white/50 transition transform hover:scale-110 active:scale-95" title="Facebook">
+              <a href="https://www.facebook.com/shinarthemiss/" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 active:bg-white/50 transition-all transform hover:scale-110 active:scale-95 hover:shadow-lg" title="Facebook">
                 <FacebookIcon />
               </a>
-              <a href="https://www.instagram.com/_ellipsisssss/" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 active:bg-white/50 transition transform hover:scale-110 active:scale-95" title="Instagram">
+              <a href="https://www.instagram.com/_ellipsisssss/" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/40 active:bg-white/50 transition-all transform hover:scale-110 active:scale-95 hover:shadow-lg" title="Instagram">
                 <InstagramIcon />
               </a>
             </div>
           </div>
 
           {/* Right side - Profile Image */}
-          <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] w-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl md:rounded-3xl transform -rotate-6 opacity-75"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl md:rounded-3xl transform rotate-3 opacity-50"></div>
-            <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl overflow-hidden border-2 border-white/30 flex items-center justify-center">
+          <div className="relative flex justify-center transform translate-x-12 md:translate-x-16 -translate-y-6 md:-translate-y-8" style={{animationDelay: '0.2s'}}>
+            <div className="relative w-70 sm:w-80 md:w-90 lg:w-125 aspect-[3/4] animate-slide-in-right">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl md:rounded-3xl transform -rotate-6 opacity-75 animate-float-rotate"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl md:rounded-3xl transform rotate-3 opacity-50 animate-float-rotate-reverse"></div>
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl overflow-hidden border-2 border-white/30 flex items-center justify-center">
               <img
-                src="https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/518290085_735353462534655_8031989623691443761_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=iWR6oEXy6-4Q7kNvwFiIXzz&_nc_oc=AdqsL2wK9gn_4ki0nI_n4z7Banx1KBJtCLuiIjnNoxkR3W9UdBIz1DAfFLkPaSlsLV8&_nc_zt=23&_nc_ht=scontent.fmnl25-5.fna&_nc_gid=KsTCtKihnS9aapu8LgwRSg&_nc_ss=7a32e&oh=00_Afy79IolBF3n84X-xxXaz2Db4hCcCgWiM-LtYOppwuHSsQ&oe=69CD3DCB"
+                src="/profile.jpg"
                 alt="Matthew Angelo L. Padayao"
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/518290085_735353462534655_8031989623691443761_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=iWR6oEXy6-4Q7kNvwFiIXzz&_nc_oc=AdqsL2wK9gn_4ki0nI_n4z7Banx1KBJtCLuiIjnNoxkR3W9UdBIz1DAfFLkPaSlsLV8&_nc_zt=23&_nc_ht=scontent.fmnl25-5.fna&_nc_gid=KsTCtKihnS9aapu8LgwRSg&_nc_ss=7a32e&oh=00_Afy79IolBF3n84X-xxXaz2Db4hCcCgWiM-LtYOppwuHSsQ&oe=69CD3DCB';
+                }}
               />
-              {/* Floating badge */}
-              <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 bg-white/90 backdrop-blur-md px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-blue-600 text-sm sm:text-base flex items-center gap-2 shadow-lg">
+              {/* Floating badge with animation */}
+              <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 bg-white/90 backdrop-blur-md px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-blue-600 text-xs sm:text-sm lg:text-base flex items-center gap-2 shadow-lg animate-bounce-subtle">
                 <Star size={18} className="fill-yellow-400 text-yellow-400" />
                 Open to Opportunities
+              </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div className="w-6 h-10 border-2 border-white rounded-full flex items-start justify-center p-2 animate-bounce">
-          <div className="w-1 h-2 bg-white rounded-full"></div>
+      {/* Enhanced scroll indicator */}
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 animate-scroll-indicator">
+        <div className="w-6 h-10 border-2 border-white rounded-full flex items-start justify-center p-2">
+          <div className="w-1 h-2 bg-white rounded-full animate-scroll-dot"></div>
         </div>
       </div>
     </section>

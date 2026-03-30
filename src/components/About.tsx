@@ -35,7 +35,7 @@ export default function About() {
           <div className="space-y-6">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                Driven by curiosity and innovation
+                Driven by Curiosity and Innovation
               </h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 I am a recent IT graduate specializing in web development. I build responsive, user-friendly applications and enjoy solving 
@@ -51,11 +51,11 @@ export default function About() {
                   Writing clean, maintainable, and scalable code
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                  <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
+                  <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
                   Creating responsive and user-friendly interfaces
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                  <span className="w-2 h-2 bg-pink-600 rounded-full"></span>
+                    <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
                   Learning new technologies and best practices
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
