@@ -35,7 +35,7 @@ export default function Education() {
     <section id="education" className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4 text-center block w-full -ml-6.5"> 
+          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4 text-center block w-full -ml-6">
             <GraduationCap className="inline w-8 h-8 mr-2" /> Education
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg text-center">
