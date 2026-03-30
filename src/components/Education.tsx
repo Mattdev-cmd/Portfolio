@@ -6,7 +6,7 @@ const education = [
     school: 'Infotech College of Arts and Sciences',
     location: 'Parañaque City',
     period: '2024 - 2025',
-    description: 'Currently pursuing IT degree with focus on web development and system integration',
+    description: 'Bachelor of Science in Information Technology graduate with a strong foundation in web development and system integration. Experienced in building real-world, scalable applications and ready to contribute effectively in a professional environment.',
     icon: Award,
     color: 'from-blue-500 to-cyan-500'
   },
