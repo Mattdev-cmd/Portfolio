@@ -72,7 +72,7 @@ const projects = [
   {
     title: 'HOA Tracker Application',
     description: 'A full-stack application for managing HOA monthly dues, payments, and generating financial reports with real-time database updates.',
-    technologies: ['JavaScript', 'Node.js', 'Database'],
+    technologies: ['JavaScript', 'Node.js', 'MongoDB'],
     link: 'https://github.com/Mattdev-cmd/HOA-Tracker-Application',
     github: 'https://github.com/Mattdev-cmd/HOA-Tracker-Application',
     image: 'https://raw.githubusercontent.com/Mattdev-cmd/HOA-Tracker-Application/refs/heads/main/11.jfif',
