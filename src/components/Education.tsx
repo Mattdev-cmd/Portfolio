@@ -102,7 +102,7 @@ export default function Education() {
           </div>
           <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-500 transition">
             <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-2">
-              10+
+              4+
             </div>
             <p className="text-gray-600 dark:text-gray-400">Years Learning</p>
           </div>
