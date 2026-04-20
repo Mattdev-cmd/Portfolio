@@ -5,25 +5,29 @@ const skills = [
     category: 'Frontend', 
     icon: Monitor,
     items: ['React', 'TypeScript', 'Tailwind CSS', 'Vue', 'HTML/CSS'],
-    color: 'from-blue-500 to-cyan-500'
+    color: 'from-blue-500 to-cyan-500',
+    proficiency: 4
   },
   { 
     category: 'Backend', 
     icon: Settings,
     items: ['Node.js', 'FastAPI', 'Express', 'Django', 'REST APIs'],
-    color: 'from-purple-500 to-pink-500'
+    color: 'from-purple-500 to-pink-500',
+    proficiency: 3
   },
   { 
     category: 'Databases', 
     icon: Database,
     items: ['MongoDB', 'PostgreSQL', 'MySQL', 'SQLite', 'Firebase'],
-    color: 'from-emerald-500 to-teal-500'
+    color: 'from-emerald-500 to-teal-500',
+    proficiency: 4
   },
   { 
     category: 'Tools & Others', 
     icon: Wrench,
     items: ['Git', 'Android Studio', 'AWS', 'Figma', 'Vite'],
-    color: 'from-orange-500 to-red-500'
+    color: 'from-orange-500 to-red-500',
+    proficiency: 3
   },
 ];
 
@@ -80,7 +84,7 @@ export default function Skills() {
                       <div
                         key={i}
                         className={`w-2 h-2 rounded-full transition ${
-                          i <= 4
+                          i <= skillGroup.proficiency
                             ? `bg-gradient-to-r ${skillGroup.color}`
                             : 'bg-gray-300 dark:bg-gray-600'
                         }`}
