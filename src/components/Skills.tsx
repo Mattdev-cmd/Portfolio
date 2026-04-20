@@ -22,7 +22,7 @@ const skills = [
   { 
     category: 'Tools & Others', 
     icon: Wrench,
-    items: ['Git', 'Docker', 'AWS', 'Figma', 'Vite'],
+    items: ['Git', 'Android Studio', 'AWS', 'Figma', 'Vite'],
     color: 'from-orange-500 to-red-500'
   },
 ];
