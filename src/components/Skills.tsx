@@ -16,7 +16,7 @@ const skills = [
   { 
     category: 'Databases', 
     icon: Database,
-    items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase'],
+    items: ['MongoDB', 'PostgreSQL', 'MySQL', 'SQLite', 'Firebase'],
     color: 'from-emerald-500 to-teal-500'
   },
   { 
