@@ -140,7 +140,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl md:rounded-3xl transform rotate-3 opacity-50 animate-float-rotate-reverse"></div>
               <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl overflow-hidden border-2 border-white/30 flex items-center justify-center">
               <img
-                src="/profile.jpg"
+                src="./profile.jpg"
                 alt="Matthew Angelo L. Padayao"
                 className="w-full h-full object-cover"
                 onError={(e) => {
