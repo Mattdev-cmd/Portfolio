@@ -4,13 +4,13 @@ const skills = [
   { 
     category: 'Frontend', 
     icon: Monitor,
-    items: ['React', 'TypeScript', 'Tailwind CSS', 'Vue.js', 'HTML/CSS'],
+    items: ['React', 'TypeScript', 'Tailwind CSS', 'Vue', 'HTML/CSS'],
     color: 'from-blue-500 to-cyan-500'
   },
   { 
     category: 'Backend', 
     icon: Settings,
-    items: ['Node.js', 'Python', 'Express', 'Django', 'REST APIs'],
+    items: ['Node.js', 'FastAPI', 'Express', 'Django', 'REST APIs'],
     color: 'from-purple-500 to-pink-500'
   },
   { 
