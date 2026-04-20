@@ -83,7 +83,7 @@ export default function Hero() {
 
             {/* Description - Staggered */}
             <p className="text-sm sm:text-base lg:text-lg text-blue-50 leading-relaxed max-w-xl animate-slide-in-left" style={{animationDelay: '0.3s'}}>
-              Building Scalable & User-Friendly Web Applications. I develop responsive and functional web applications using modern technologies like React, JavaScript, and Node.js. I focus on clean code, performance, and real-world problem solving.
+              I design and develop scalable, user-focused web applications using modern technologies such as React, Tailwind, and Node.js. I am passionate about building clean, efficient, and maintainable code while creating seamless and responsive user experiences. My goal is to transform real-world problems into practical and high-performing digital solutions.
             </p>
 
             {/* Statistics */}
