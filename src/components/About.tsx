@@ -27,7 +27,7 @@ export default function About() {
           <div className="relative">
             <div className="relative h-96 rounded-lg overflow-hidden">
               <img
-                src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/678531838_122098512416584943_8895036844492862784_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeHFGy4ACblC31EV5HVRH5jTmlY9a5HvgzmaVj1rke-DOd69zfIA9WyNOcbqLaX2S9avE9VBa4CfS0HeLBX3ech0&_nc_ohc=NGFt2kNYKkEQ7kNvwF8r6Eq&_nc_oc=AdoAwkbrxYJ2ZcCjb7_C225vkdz1a5OwWS5qwlzFzXXcl7kQmY1MqJV7fQyeLCrfHao&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=W7xBJqHjAU82lRhkTjbd7w&_nc_ss=7b2a8&oh=00_Af1VRgwLayoZGL09JhBKAo0Nx4AdmgvzG95LKW939i7qjw&oe=69F2249F"
+                src="https://chatgpt.com/backend-api/estuary/content?id=file_000000006a1c7208b71261495bb3df42&ts=493659&p=fs&cid=1&sig=a50012d285fb84a1026d9fea78fd27641784a9295afe81e1a290c4dd59bdba33&v=0"
                 alt="Matthew Angelo L. Padayao"
                 className="w-full h-full object-cover"
               />
