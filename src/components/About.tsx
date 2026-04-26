@@ -9,57 +9,59 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 bg-white dark:bg-gray-950">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="bg-black py-24 px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
             About Me
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg">
+          <p className="text-gray-400 text-lg">
             Fresh graduate passionate about web development and building meaningful digital experiences
           </p>
         </div>
 
+        {/* Content Grid */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          {/* Image */}
           <div className="relative">
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-96 rounded-lg overflow-hidden">
               <img
-                src="https://scontent.fmnl4-7.fna.fbcdn.net/v/t39.30808-6/517704933_735353325868002_906279099247123813_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeHg2jQRhEOticyjozjsg8lhUikbpG7jXs5SKRukbuNezu9nexUo5fmfuVnMWhdSsAD1cGRtRaFgRrJcgKoW13Mk&_nc_ohc=Z-G-MupNSGMQ7kNvwHLou2i&_nc_oc=AdpcKJwHxa6z2GZjyS1sb7AiRjDwNEXb72Ych6CoB3tOarmn_oDHvmAGw-RADfdD4nk&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&_nc_gid=YSNhzfnK43RRHVnKH7AVWw&_nc_ss=7a3a8&oh=00_Af0uGzHyJqVoRn3DTPtMRaNuJuCvn-ROoIE8cRS4xEvjUw&oe=69EB6D64"
+                src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/678531838_122098512416584943_8895036844492862784_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeHFGy4ACblC31EV5HVRH5jTmlY9a5HvgzmaVj1rke-DOd69zfIA9WyNOcbqLaX2S9avE9VBa4CfS0HeLBX3ech0&_nc_ohc=NGFt2kNYKkEQ7kNvwF8r6Eq&_nc_oc=AdoAwkbrxYJ2ZcCjb7_C225vkdz1a5OwWS5qwlzFzXXcl7kQmY1MqJV7fQyeLCrfHao&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=W7xBJqHjAU82lRhkTjbd7w&_nc_ss=7b2a8&oh=00_Af1VRgwLayoZGL09JhBKAo0Nx4AdmgvzG95LKW939i7qjw&oe=69F2249F"
                 alt="Matthew Angelo L. Padayao"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-600/40 to-transparent"></div>
             </div>
           </div>
 
+          {/* Text Content */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+              <h3 className="text-2xl font-bold text-white mb-3">
                 Driven by Curiosity and Innovation
               </h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                I am a recent IT graduate specializing in web development. I build responsive, user-friendly applications and enjoy solving 
-                real-world problems through technology. I have hands-on experience with modern web tools and continuously improve my skills through projects.
+              <p className="text-gray-400 leading-relaxed">
+                I am a recent IT graduate specializing in web development. I build responsive, user-friendly applications and enjoy solving real-world problems through technology. I have hands-on experience with modern web tools and continuously improve my skills through projects.
               </p>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">What I'm focused on:</h4>
+              <h4 className="text-lg font-semibold text-white mb-3">What I'm focused on:</h4>
               <ul className="space-y-2">
-                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                <li className="flex items-center gap-3 text-gray-400">
+                  <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
                   Writing clean, maintainable, and scalable code
                 </li>
-                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                <li className="flex items-center gap-3 text-gray-400">
+                  <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
                   Creating responsive and user-friendly interfaces
                 </li>
-                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                <li className="flex items-center gap-3 text-gray-400">
+                  <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
                   Learning new technologies and best practices
                 </li>
-                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                <li className="flex items-center gap-3 text-gray-400">
+                  <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
                   Collaborating with teams to solve real-world problems
                 </li>
               </ul>
@@ -67,23 +69,15 @@ export default function About() {
           </div>
         </div>
 
+        {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((stat) => {
+          {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <div
-                key={stat.label}
-                className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 p-6 rounded-xl border border-blue-200 dark:border-gray-700 text-center hover:shadow-lg transition"
-              >
-                <div className="flex justify-center mb-3">
-                  <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg">
-                    <Icon className="text-white" size={24} />
-                  </div>
-                </div>
-                <p className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{stat.label}</p>
+              <div key={index} className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 text-center">
+                <Icon className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
               </div>
             );
           })}

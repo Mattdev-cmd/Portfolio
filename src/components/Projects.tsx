@@ -1,4 +1,4 @@
-import { ArrowUpRight, Code, ChevronLeft, ChevronRight, X, Sparkles, Package, Camera } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, Camera, ArrowUpRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const projects = [
@@ -163,70 +163,61 @@ export default function Projects() {
 
   return (
     <>
-      <section id="projects" className="py-20 px-4 sm:px-8 lg:px-16 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 dark:from-black dark:via-purple-950 dark:to-black">
-        <div className="max-w-screen-2xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              <Sparkles className="inline w-8 h-8 mr-2" /> My GitHub Projects
-            </h2>
-            <p className="text-gray-300 text-lg">
-              Showcasing my latest repositories and technical projects
+      <section
+        id="projects"
+        className="bg-white py-24 px-6 text-slate-950 transition-colors duration-300 dark:bg-black dark:text-white"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-gray-500">
+              SELECTED WORK
             </p>
+            <h2 className="text-5xl font-bold text-slate-950 dark:text-white md:text-6xl">
+              Github Projects
+            </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group bg-gray-800/50 backdrop-blur-xl border border-gray-700 rounded-2xl overflow-hidden hover:border-purple-500/50 transition duration-300 hover:shadow-2xl hover:shadow-purple-500/20 flex flex-col"
+                className="group flex h-full flex-col overflow-hidden rounded-lg border border-slate-200 bg-slate-50 transition-all duration-300 hover:border-slate-300 dark:border-gray-800 dark:bg-gray-900/50 dark:hover:border-gray-700"
               >
-                <div className={`h-48 shrink-0 overflow-hidden bg-gradient-to-br ${project.color} relative`}>
+                <div className="relative h-56 overflow-hidden bg-slate-200 dark:bg-gray-800">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-80"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/0 transition"></div>
-                  <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-white flex items-center gap-1">
-                    <Package size={14} className="inline" /> GitHub
-                  </div>
                 </div>
 
-                <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm mt-2 leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 px-3 py-1 rounded-full text-xs font-medium border border-blue-500/30"
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="mb-3 text-xl font-semibold text-slate-950 dark:text-white">
+                    {project.title}
+                  </h3>
+                  <p className="mb-4 flex-1 text-sm text-slate-600 dark:text-gray-400">
+                    {project.description}
+                  </p>
+                  <p className="mb-4 text-sm text-slate-500 dark:text-gray-500">
+                    {project.technologies.join(', ')}
+                  </p>
+                  
+                  <div className="flex gap-2 border-t border-slate-200 pt-4 dark:border-gray-700">
+                    {project.gallery && (
+                      <button
+                        onClick={() => openGallery(index)}
+                        className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition transform hover:scale-105 text-sm"
                       >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-3 pt-4 border-t border-gray-700">
-                    <button
-                      onClick={() => project.gallery ? openGallery(index) : window.open(project.link, '_blank')}
-                      className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg font-semibold transition transform hover:scale-105 text-sm"
-                    >
-                      View {project.gallery && <Camera size={16} className="inline" />} <ArrowUpRight size={16} />
-                    </button>
+                        <Camera size={16} /> View
+                      </button>
+                    )}
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold transition text-sm"
+                      className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-gray-700 dark:hover:bg-gray-600"
                     >
-                      <Code size={16} />
+                      GitHub <ArrowUpRight size={16} />
                     </a>
                   </div>
                 </div>

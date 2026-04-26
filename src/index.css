@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 html {
   scroll-behavior: smooth;
@@ -8,6 +9,8 @@ html {
 
 body {
   overflow-x: hidden;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 /* Touch-friendly interactions */
