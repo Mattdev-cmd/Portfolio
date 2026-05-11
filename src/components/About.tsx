@@ -27,7 +27,7 @@ export default function About() {
           <div className="relative">
             <div className="relative h-96 rounded-lg overflow-hidden">
               <img
-                src="https://scontent.fmnl14-2.fna.fbcdn.net/v/t39.30808-6/679891282_122098852958584943_7234278064911193162_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=mQ5zsRRMcJgQ7kNvwFF5SZD&_nc_oc=AdoaP7d9maDIqBtDVxc5FnaHMLutW19HvB0Hudlp1FPF3qppDOFaRun0LHh_y6IJRps&_nc_zt=23&_nc_ht=scontent.fmnl14-2.fna&_nc_gid=U-p__ItCLy-aUdsj4bfOHw&_nc_ss=7b2a8&oh=00_Af5jjUpP4vQq0SAZ-QyIV1Ri4s30Y697kxepG2mmUMUYbA&oe=6A00F59E"
+                src="https://scontent.fmnl37-1.fna.fbcdn.net/v/t39.30808-6/679891282_122098852958584943_7234278064911193162_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGroXK3BHeNIyGbNnUVNteDV50nDHtLTuJXnScMe0tO4s4v5iRhbMowVUT36OUMPbnfBbJUMvNTGDhkVW_lddSA&_nc_ohc=ctQ8m4V6tWEQ7kNvwG2IfUU&_nc_oc=Ado3wtFVdsixhmdRvEx8pMoYv5pedoq_24slKc0Yu8VdXDgJkS4cyIcTY0v_zp8idcY&_nc_zt=23&_nc_ht=scontent.fmnl37-1.fna&_nc_gid=JN8QIUY-kgD6tvm9LnRyCA&_nc_ss=7b2a8&oh=00_Af4LbGUCIwsLYRyuurVMF_ENa_EYgwsau6Q-Y8aFT3f21Q&oe=6A071C9E"
                 alt="Matthew Angelo L. Padayao"
                 className="w-full h-full object-cover"
               />
