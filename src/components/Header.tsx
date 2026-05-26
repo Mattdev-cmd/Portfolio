@@ -7,7 +7,9 @@ export default function Header() {
   const navLinks = [
     { href: '#about', label: 'About' },
     { href: '#skills', label: 'Skills' },
+    { href: '#terminal', label: 'Console' },
     { href: '#projects', label: 'Work' },
+    { href: '#github-stats', label: 'Stats' },
     { href: '#contact', label: 'Contact' },
   ];
 
