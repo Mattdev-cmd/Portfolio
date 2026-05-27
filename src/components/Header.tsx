@@ -9,7 +9,6 @@ export default function Header() {
     { href: '#skills', label: 'Skills' },
     { href: '#terminal', label: 'Console' },
     { href: '#projects', label: 'Work' },
-    { href: '#github-stats', label: 'Stats' },
     { href: '#contact', label: 'Contact' },
   ];
 
