@@ -65,10 +65,12 @@ export default function Terminal() {
         output: (
           <div className="space-y-2">
             <pre className="text-xs leading-none sm:text-sm font-bold opacity-90 select-none">
-{`   __  __         _     _               _____  _      ___ 
-  |  \\/  |  __ _ | |_  | |_  _  _  _  _  |_  _|/ |    |_ _|
-  | |\\/| | / _\` ||  _| |  _|| || || || || | | |  | |__   | | 
-  |_|  |_| \\__,_| \\__|  \\__| \\_,_| \\_,_| |_|  |_|___| |___|`}
+{`███╗   ███╗ █████╗ ████████╗████████╗██╗  ██╗███████╗██╗    ██╗
+  ████╗ ████║██╔══██╗╚══██╔══╝╚══██╔══╝██║  ██║██╔════╝██║    ██║
+  ██╔████╔██║███████║   ██║      ██║   ███████║█████╗  ██║ █╗ ██║
+  ██║╚██╔╝██║██╔══██║   ██║      ██║   ██╔══██║██╔══╝  ██║███╗██║
+  ██║ ╚═╝ ██║██║  ██║   ██║      ██║   ██║  ██║███████╗╚███╔███╔╝
+  ╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝ `}
             </pre>
             <p className="mt-4 font-bold text-base">Welcome to Matthew's Interactive CLI Resume (v1.0.0)</p>
             <p className="opacity-80">Type <span className="underline font-bold">help</span> to see a list of available commands, or explore my background interactively.</p>
