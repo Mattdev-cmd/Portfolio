@@ -27,7 +27,7 @@ export default function About() {
           <div className="relative">
             <div className="relative h-96 rounded-lg overflow-hidden">
               <img
-                src="assets/AI.png"
+                src="src/assets/AI.jpg"
                 alt="Matthew Angelo L. Padayao"
                 className="w-full h-full object-cover"
               />
